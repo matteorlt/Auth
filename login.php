@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user['username'];
-        header('Location: http://localhost:8080/auth/views/accueil.php');
+        header('Location: accueil.php');
         exit();
     } else {
-        echo "Identifiants invalides.";
+        header('Location: views/index.html?error=login');
+        exit();
     }
 }

@@ -20,7 +20,7 @@ $username = htmlspecialchars($_SESSION['user']);
     <div class="form-container">
         <h2>Connexion réussie !</h2>
         <p>Bienvenue, <strong><?php echo $username; ?></strong> 👋</p>
-        <form action="logout.php" method="POST">
+        <form action="../logout.php" method="POST">
             <button type="submit">Se déconnecter</button>
         </form>
     </div>

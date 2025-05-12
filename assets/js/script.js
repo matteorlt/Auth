@@ -47,3 +47,36 @@ function getPasswordStrength(password) {
   if (hasLetters && hasNumbers) return "Moyen";
   return "Faible";
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const messageBox = document.getElementById("messageBox");
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has("error")) {
+    let msg = "";
+    switch (params.get("error")) {
+      case "username":
+        msg = "Nom d'utilisateur déjà utilisé.";
+        break;
+      case "email":
+        msg = "Adresse email déjà utilisée.";
+        break;
+      case "login":
+        msg = "Identifiants invalides.";
+        break;
+      default:
+        msg = "Une erreur inconnue est survenue.";
+    }
+    showMessage(msg, "error");
+  }
+
+  if (params.get("success") === "register") {
+    showMessage("Inscription réussie ! Connecte-toi.", "success");
+    showLogin(); // Bascule sur le formulaire de connexion
+  }
+
+  function showMessage(msg, type) {
+    messageBox.textContent = msg;
+    messageBox.className = type === "error" ? "alert error" : "alert success";
+  }
+});

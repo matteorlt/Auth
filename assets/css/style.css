@@ -78,3 +78,20 @@ body {
     text-align: center;
   }
   
+  .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .alert.error {
+    background-color: #ffd6d6;
+    color: #a10000;
+  }
+  
+  .alert.success {
+    background-color: #d6ffdc;
+    color: #007a2e;
+  }

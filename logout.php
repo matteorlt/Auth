@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('Location: http://localhost:8080/auth/index.html');
+header('Location: views/index.html');
 exit();
