@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (params.get("success") === "register") {
     showMessage("Inscription réussie ! Connecte-toi.", "success");
-    showLogin(); // Bascule sur le formulaire de connexion
+    showLogin();
   }
 
   function showMessage(msg, type) {

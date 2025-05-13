@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user['username'];
-        header('Location: accueil.php');
+        header('Location: views/accueil.php');
         exit();
     } else {
         header('Location: views/index.html?error=login');
