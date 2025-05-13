@@ -80,3 +80,28 @@ window.addEventListener("DOMContentLoaded", () => {
     messageBox.className = type === "error" ? "alert error" : "alert success";
   }
 });
+
+function validateLoginForm() {
+  const username = document.querySelector('input[name="username"]').value;
+  const password = document.querySelector('input[name="password"]').value;
+  let valid = true;
+  let message = '';
+
+  if (username.trim() === '') {
+    message += 'Le nom d\'utilisateur est requis.\n';
+    valid = false;
+  }
+
+  if (password.length < 8) {
+    message += 'Le mot de passe doit contenir au moins 8 caractères.\n';
+    valid = false;
+  }
+
+  if (!valid) {
+    alert(message);
+  }
+
+  return valid;
+}
+
+document.getElementById("loginForm").onsubmit = validateLoginForm;
